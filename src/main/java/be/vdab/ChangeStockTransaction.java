@@ -6,18 +6,12 @@ import static be.vdab.ConnectionUtils.*;
 
 public class ChangeStockTransaction {
     public static void main(String[] args) {
-        String sql1 = "UPDATE beers SET stock = ? WHERE name = ?";
-        String sql2 = "UPDATE beers SET stock = ? WHERE name = ?";
-        try (Connection con = DriverManager.getConnection (
-                ADRESS,
-                USER,
-                PASSWORD
-        );)
-        {
+        String sql = "UPDATE beers SET stock = ? WHERE name = ?";
+        try (Connection con = DriverManager.getConnection (ADRESS, USER, PASSWORD)) {
             System.out.println("Connection OK");
 
-            try (PreparedStatement statement1 = con.prepareStatement(sql1);
-                 PreparedStatement statement2 = con.prepareStatement(sql2)) {
+            try (PreparedStatement statement1 = con.prepareStatement(sql);
+                 PreparedStatement statement2 = con.prepareStatement(sql)) {
 
                 con.setAutoCommit(false);
 

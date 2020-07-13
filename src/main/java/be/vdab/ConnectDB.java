@@ -12,11 +12,7 @@ public class ConnectDB {
                 "ON b.BrewerId = br.Id " +
                 "WHERE Alcohol > 10 " +
                 "ORDER BY Alcohol";
-        try (Connection con = DriverManager.getConnection (
-                ADRESS,
-                USER,
-                PASSWORD
-            );
+        try (Connection con = DriverManager.getConnection (ADRESS, USER, PASSWORD);
              Statement statement = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
              ResultSet rs = statement.executeQuery(sql);
              ) {

@@ -12,10 +12,7 @@ public class PreparedBeerSearch {
                 "ON b.BrewerId = br.Id " +
                 "WHERE Alcohol > ? " +
                 "ORDER BY Alcohol desc";
-        try (Connection con = DriverManager.getConnection (
-                ADRESS,
-                USER,
-                PASSWORD);
+        try (Connection con = DriverManager.getConnection (ADRESS, USER, PASSWORD);
              PreparedStatement statement = con.prepareStatement(sql)
         ) {
             System.out.println("Connection OK");

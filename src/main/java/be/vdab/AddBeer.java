@@ -7,11 +7,7 @@ import static be.vdab.ConnectionUtils.*;
 public class AddBeer {
     public static void main(String[] args) {
         String sql = "INSERT INTO beers (name, alcohol, price, stock, categoryId, brewerId) VALUES ('MyBeer', 12, 3, 100, 2, 2) ";
-        try (Connection con = DriverManager.getConnection (
-                ADRESS,
-                USER,
-                PASSWORD
-        );
+        try (Connection con = DriverManager.getConnection (ADRESS, USER, PASSWORD);
              Statement statement = con.createStatement();
         ) {
             System.out.println("Connection OK");

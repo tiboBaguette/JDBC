@@ -7,11 +7,7 @@ import static be.vdab.ConnectionUtils.*;
 public class ChangeStock {
     public static void main(String[] args) {
         String sql = "UPDATE beers SET price = 4 WHERE name ='Fitt'";
-        try (Connection con = DriverManager.getConnection (
-                ADRESS,
-                USER,
-                PASSWORD
-        );
+        try (Connection con = DriverManager.getConnection (ADRESS, USER, PASSWORD);
              Statement statement = con.createStatement();
         ) {
             System.out.println("Connection OK");
