@@ -15,20 +15,32 @@ public class PreparedBeerSearch {
         try (Connection con = DriverManager.getConnection (
                 ADRESS,
                 USER,
-                PASSWORD
-        );
-             PreparedStatement statement = con.prepareStatement(sql))
-        {
+                PASSWORD);
+             PreparedStatement statement = con.prepareStatement(sql)
+        ) {
             System.out.println("Connection OK");
 
-            statement.setInt(1, 10);
-            ResultSet rs = statement.executeQuery();
-            while(rs.next()) {
-                String beerName = rs.getString("b.name");
-                double alcohol = rs.getDouble("alcohol");
-                double price = rs.getDouble("price");
-                String category = rs.getString("category");
-                String brewer = rs.getString("br.name");
+            System.out.println("Bier met 5% of hoger: ");
+            statement.setFloat(1, 5F);
+            ResultSet rs1 = statement.executeQuery();
+            while(rs1.next()) {
+                String beerName = rs1.getString("b.name");
+                double alcohol = rs1.getDouble("alcohol");
+                double price = rs1.getDouble("price");
+                String category = rs1.getString("category");
+                String brewer = rs1.getString("br.name");
+                System.out.println(beerName + " | " + alcohol + "% | " + price + "$ | " + category + " | " + brewer);
+            }
+
+            System.out.println("Bier met 10% of hoger: ");
+            statement.setFloat(1, 10F);
+            ResultSet rs2 = statement.executeQuery();
+            while(rs2.next()) {
+                String beerName = rs2.getString("b.name");
+                double alcohol = rs2.getDouble("alcohol");
+                double price = rs2.getDouble("price");
+                String category = rs2.getString("category");
+                String brewer = rs2.getString("br.name");
                 System.out.println(beerName + " | " + alcohol + "% | " + price + "$ | " + category + " | " + brewer);
             }
         }
