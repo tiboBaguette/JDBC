@@ -1,4 +1,4 @@
-package be.vdab.DAO;
+package be.vdab.DAO.Exceptions;
 
 public class BeerExeption extends Throwable {
 

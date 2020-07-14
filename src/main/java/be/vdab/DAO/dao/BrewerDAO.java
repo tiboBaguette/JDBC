@@ -1,6 +1,6 @@
 package be.vdab.DAO.dao;
 
-import be.vdab.DAO.BrewerExeption;
+import be.vdab.DAO.Exceptions.BrewerExeption;
 import be.vdab.DAO.model.Brewer;
 
 import java.util.List;

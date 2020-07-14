@@ -1,5 +1,7 @@
 package be.vdab.DAO.model;
 
+import java.util.Objects;
+
 public class Beer {
     private int id;
     private String name;
@@ -56,5 +58,17 @@ public class Beer {
                 ", stock=" + stock +
                 ", alcohol=" + alcohol +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Beer beer = (Beer) o;
+        return id == beer.id &&
+                Float.compare(beer.price, price) == 0 &&
+                stock == beer.stock &&
+                Float.compare(beer.alcohol, alcohol) == 0 &&
+                Objects.equals(name, beer.name);
     }
 }

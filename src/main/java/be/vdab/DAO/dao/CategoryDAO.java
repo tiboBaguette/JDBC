@@ -1,6 +1,6 @@
 package be.vdab.DAO.dao;
 
-import be.vdab.DAO.CategoryExeption;
+import be.vdab.DAO.Exceptions.CategoryExeption;
 import be.vdab.DAO.model.Category;
 
 public interface CategoryDAO {

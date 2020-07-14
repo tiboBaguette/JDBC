@@ -1,10 +1,11 @@
 package be.vdab.DAO;
 
+import be.vdab.DAO.Exceptions.BeerExeption;
 import be.vdab.DAO.dao.BeerDAO;
 import be.vdab.DAO.dao.BeerDAOImpl;
 import be.vdab.DAO.model.Beer;
 
-public class BeerTest {
+public class BeerApp {
     public static void main(String[] args) {
         Beer beer = new Beer();
         beer.setId(1600);

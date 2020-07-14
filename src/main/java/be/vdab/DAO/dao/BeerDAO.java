@@ -1,6 +1,6 @@
 package be.vdab.DAO.dao;
 
-import be.vdab.DAO.BeerExeption;
+import be.vdab.DAO.Exceptions.BeerExeption;
 import be.vdab.DAO.model.Beer;
 
 public interface BeerDAO {

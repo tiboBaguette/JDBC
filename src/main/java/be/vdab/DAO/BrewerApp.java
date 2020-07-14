@@ -1,12 +1,13 @@
 package be.vdab.DAO;
 
+import be.vdab.DAO.Exceptions.BrewerExeption;
 import be.vdab.DAO.dao.BrewerDAO;
 import be.vdab.DAO.dao.BrewerDAOImpl;
 import be.vdab.DAO.model.Brewer;
 
 import java.util.List;
 
-public class BrewerTest {
+public class BrewerApp {
     public static void main(String[] args) {
         BrewerDAO brewerDao = new BrewerDAOImpl();
 
